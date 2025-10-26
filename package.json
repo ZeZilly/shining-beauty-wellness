@@ -1,0 +1,88 @@
+{
+  "name": "shining-beauty-wellness",
+  "version": "1.0.0",
+  "description": "Luxury beauty salon and wellness center website for Shining Beauty and Wellness in Gazipaşa, Adana, Turkey",
+  "private": true,
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "scripts": {
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "client:dev": "cd frontend && npm start",
+    "server:dev": "cd backend && npm run dev",
+    "client:build": "cd frontend && npm run build",
+    "server:build": "cd backend && npm run build",
+    "build": "npm run client:build && npm run server:build",
+    "start": "cd backend && npm start",
+    "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install",
+    "test": "npm run client:test && npm run server:test",
+    "client:test": "cd frontend && npm test",
+    "server:test": "cd backend && npm test",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+    "deploy": "npm run build && npm run start",
+    "heroku-prebuild": "npm run install:all",
+    "heroku-postbuild": "npm run build"
+  },
+  "keywords": [
+    "beauty salon",
+    "wellness center",
+    "spa",
+    "massage",
+    "skincare",
+    "manicure",
+    "pedicure",
+    "anti-aging",
+    "Adana",
+    "Gazipaşa",
+    "Turkey",
+    "React",
+    "Node.js",
+    "MongoDB"
+  ],
+  "author": {
+    "name": "Mehmet Zeki Oğuz",
+    "email": "zekiouuz@gmail.com",
+    "url": "https://zekioguz.pw"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ZeZilly/shining-beauty-wellness.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ZeZilly/shining-beauty-wellness/issues"
+  },
+  "homepage": "https://github.com/ZeZilly/shining-beauty-wellness#readme",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "eslint": "^8.57.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^3.0.3",
+    "nodemon": "^3.0.2"
+  },
+  "dependencies": {},
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "config": {
+    "port": 3000,
+    "api_port": 5000
+  }
+}
